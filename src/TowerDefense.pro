@@ -17,4 +17,6 @@ include(deployment.pri)
 DISTFILES +=
 
 HEADERS += \
-    tower.h
+    tower.h \
+    game.h \
+    enemies.h

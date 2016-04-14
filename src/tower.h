@@ -1,6 +1,14 @@
 #ifndef TOWER_H
 #define TOWER_H
 
-#include <QGraphicsPixmapItem>
+class Tower{
+public:
+    Tower();
+
+private:
+
+
+};
+
 
 #endif // TOWER_H

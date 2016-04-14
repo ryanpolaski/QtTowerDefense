@@ -5,7 +5,7 @@ import Qt.labs.controls 1.0
 Window
 {
     id:gameWindow
-    visible: true
+    visible: false
     width:640
     height:480
 }

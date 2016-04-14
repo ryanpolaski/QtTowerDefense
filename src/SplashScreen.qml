@@ -7,6 +7,7 @@ Window
     id:topWindow
     visible: true
     property bool isRotated:false
+    //property alias mouseArea: MouseArea
     property Item itemBeingDragged:null
     width:640
     height:480
@@ -40,6 +41,17 @@ Window
         scale: .5
     }
 
+    Timer{
+        id: startTimer
+        interval: 800
+        running: false
+        repeat: false
+        onTriggered:{
+            topWindow.visible = false
+
+        }
+    }
+
     MyButton
     {
         id: startButton
@@ -58,7 +70,10 @@ Window
             text: "START"
             font.family: "Times"
         }
-        //mouseArea.onClicked: loader.source = "GameScreen.qml"
+        mouseArea.onClicked:{
+            startTimer.start()
+            //topWindow.visible = false
+        }
     }
 
     MyButton
