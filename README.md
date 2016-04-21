@@ -1,4 +1,4 @@
-![Alt text](Desktop/TDlogo.jpg)
+![Alt text](src/Images/TDlogo.jpg)
 
 <b>Description:<b>
 Cross platform application that lets users play a tower defense style game. 
@@ -8,7 +8,7 @@ C++, Qt, QML, Javascript<br />
 
 <b>Screenshots:</b><br />
 
-![Alt text](Images/TDscreenshot1.jpg)
+![Alt text](src/Images/TDscreenshot1.jpg)
 
 <b>Installation:</b><br />
 1. Install Qt Creator 5.6 <br />
