@@ -1,18 +1,27 @@
+// Lab 3
 #ifndef ENEMIES_H
 #define ENEMIES_H
 
-class Enemies{
+#include "QObject"
+
+class Enemies
+{
 public:
     Enemies();
     ~Enemies();
+
+public slots:
     int GetHealth();
     int GetSpeed();
-    void SetHealth();
-    void SetSpeed();
+    bool GetRunning();
+    void SetHealth(int health);
+    void SetSpeed(int speed);
+    void SetRunning(bool running);
 
 private:
     int m_health;
     int m_speed = .5;
+    bool m_running;
 
 };
 

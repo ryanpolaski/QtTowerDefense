@@ -4,7 +4,8 @@ QT += qml quick
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    tower.cpp
+    tower.cpp \
+    enemies.cpp
 
 RESOURCES += qml.qrc
 

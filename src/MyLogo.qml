@@ -1,3 +1,4 @@
+// Lab 3
 import QtQuick 2.5
 import QtQuick.Window 2.0
 import Qt.labs.controls 1.0
@@ -21,6 +22,8 @@ Item{
                 PropertyChanges { target: img; scale: 1 }
             }
         ]
+
+
 
         transitions: Transition {
             PropertyAnimation {

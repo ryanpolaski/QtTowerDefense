@@ -10,5 +10,8 @@
         <file>../Images/homeScreenBackground.png</file>
         <file>../Images/startScreenBackground.jpg</file>
         <file>../Images/TDlogo.png</file>
+        <file>../Images/map1.jpg</file>
+        <file>Enemy.qml</file>
+        <file>Bullet.qml</file>
     </qresource>
 </RCC>
