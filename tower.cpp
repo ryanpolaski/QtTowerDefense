@@ -1,3 +1,4 @@
+// Lab 3
 #include "tower.h"
 
 Tower::Tower() : m_state(WAITING), m_dragable(true)

@@ -100,6 +100,7 @@ Window
                 PathLine{x: (enemy1.x + 5); y: (enemy1.y + 5)}
             }
         }
+        // changed some stuff
 
         MouseArea{
             onClicked: path.paused = false

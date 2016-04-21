@@ -1,3 +1,4 @@
+// Lab 3
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "QQmlContext"
