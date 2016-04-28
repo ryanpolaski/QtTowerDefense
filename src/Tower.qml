@@ -14,6 +14,8 @@ Rectangle
     radius: width * .5
     Drag.active: mouseArea.drag.active
 
+    //property real maximumDragY: 450
+
 
     Rectangle
     {
@@ -85,6 +87,11 @@ Rectangle
                 drag.target = tower
                 tower.border.color = "gold"
             }
+
+            drag.minimumY = 65
+            drag.maximumY = 370
+            drag.minimumX = 120
+            drag.maximumX = 520
         }
 
         onReleased:

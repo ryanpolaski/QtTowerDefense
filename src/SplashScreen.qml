@@ -11,6 +11,8 @@ Window
     width:640
     height:480
 
+
+
     Image
     {
         anchors.fill: parent.fill
@@ -65,6 +67,7 @@ Window
             topWindow.visible = false
         }
     }
+
 
     MyButton
     {
