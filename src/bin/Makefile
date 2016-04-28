@@ -59,7 +59,18 @@ OBJECTS       = main.o \
 		qrc_qml.o \
 		moc_tower.o \
 		moc_enemies.o
-DIST          = /Users/Qt/5.6/clang_64/mkspecs/features/spec_pre.prf \
+DIST          = ../Bullet.qml \
+		../Enemy.qml \
+		../GameScreen.qml \
+		../main.qml \
+		../MyButton.qml \
+		../MyLogo.qml \
+		../MyTranformations.qml \
+		../OptionsScreen.qml \
+		../SplashScreen.qml \
+		../TextRect.qml \
+		../Tower.qml \
+		/Users/Qt/5.6/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/Qt/5.6/clang_64/mkspecs/qdevice.pri \
 		/Users/Qt/5.6/clang_64/mkspecs/features/device_config.prf \
 		/Users/Qt/5.6/clang_64/mkspecs/common/unix.conf \
@@ -581,10 +592,7 @@ qrc_qml.cpp: ../qml.qrc \
 		../Bullet.qml \
 		../main.qml \
 		../OptionsScreen.qml \
-		../../Images/startScreenBackground.jpg \
 		../../Images/mouse_click.mp3 \
-		../../Images/homeScreenBackground.png \
-		../../Images/TDlogo.png \
 		../../Images/map1.jpg \
 		../../Images/Incidental-music.mp3
 	/Users/Ryan/Qt/5.6/clang_64/bin/rcc -name qml ../qml.qrc -o qrc_qml.cpp

@@ -24,6 +24,7 @@ public slots:
     int getState();
     void setState(int state);
 
+
 private:
     int m_state;
     bool m_dragable;

@@ -121,7 +121,7 @@ Window
                     }
                     else
                     {
-                        switchMain.state = "on"
+                        //switchMain.state = "on"
                         backgroundMusic.muted = false
                     }
                  }

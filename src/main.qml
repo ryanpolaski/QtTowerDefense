@@ -10,7 +10,6 @@ SplashScreen
 {
     id: splashScreen
 
-
     GameScreen
     {
         id: gameScreen

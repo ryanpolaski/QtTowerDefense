@@ -18,6 +18,7 @@ Window
         source: ":/../Images/map1.jpg"
     }
 
+
     MyButton
     {
         anchors.right : parent.right
@@ -43,8 +44,8 @@ Window
         }
     }
 
-    MyButton
-    {
+
+    MyButton{
         anchors.left : parent.left
         anchors.top: parent.top
         id: homeButton
@@ -61,14 +62,14 @@ Window
             font.family: "Times"
         }
 
+
         mouseArea.onClicked:
         {
             splashScreen.visible = true
-            gameScreen.visible = false
+            gameScreen.visible = fasle
             gameWindow.visible = false
         }
     }
-
 
     Enemy
     {
@@ -111,8 +112,13 @@ Window
         }
     }
 
-    Text
-    {
+
+    Enemy{
+        id:enemy1
+
+    }
+
+    Text {
         id: name
         x: 450
         y:400
@@ -167,4 +173,6 @@ Window
             }
         }
    }
+
+
 }

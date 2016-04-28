@@ -2,8 +2,6 @@ import QtQuick 2.6
 import QtQuick.Window 2.2
 import Qt.labs.controls 1.0
 
-
-
 Window
 {
     id:topWindow
@@ -42,14 +40,14 @@ Window
         scale: .5
     }
 
-    Timer
-    {
+    Timer{
+
         id: startTimer
         interval: 800
         running: false
         repeat: false
-        onTriggered:
-        {
+
+        onTriggered:{
             gameScreen.visible = true
             topWindow.visible = false
         }
@@ -88,9 +86,11 @@ Window
             text: "START"
             font.family: "Times"
         }
+
         mouseArea.onClicked:
         {
             startTimer.start()
+
         }
     }
 

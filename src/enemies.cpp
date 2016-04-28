@@ -7,9 +7,9 @@ Enemies::Enemies() : m_health(20), m_running(false)
 Enemies::~Enemies()
 {}
 
-void Enemies::setHealth(int health)
+void Enemies::SetHealth(int health)
 {
-    m_health -= health;
+    m_health = health;
 }
 
 void Enemies::SetSpeed(int speed)
@@ -27,7 +27,8 @@ bool Enemies::GetRunning()
     return m_running;
 }
 
-int Enemies::getHealth()
+
+int Enemies::GetHealth()
 {
     return m_health;
 }

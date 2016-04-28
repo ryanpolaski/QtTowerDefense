@@ -13,10 +13,10 @@ public:
     ~Enemies();
 
 public slots:
-    int getHealth();
     int GetSpeed();
     bool GetRunning();
-    void setHealth(int health);
+    int GetHealth();
+    void SetHealth(int health);
     void SetSpeed(int speed);
     void SetRunning(bool running);
 

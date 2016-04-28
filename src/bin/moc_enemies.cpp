@@ -30,11 +30,11 @@ struct qt_meta_stringdata_Enemies_t {
 static const qt_meta_stringdata_Enemies_t qt_meta_stringdata_Enemies = {
     {
 QT_MOC_LITERAL(0, 0, 7), // "Enemies"
-QT_MOC_LITERAL(1, 8, 9), // "getHealth"
-QT_MOC_LITERAL(2, 18, 0), // ""
-QT_MOC_LITERAL(3, 19, 8), // "GetSpeed"
-QT_MOC_LITERAL(4, 28, 10), // "GetRunning"
-QT_MOC_LITERAL(5, 39, 9), // "setHealth"
+QT_MOC_LITERAL(1, 8, 8), // "GetSpeed"
+QT_MOC_LITERAL(2, 17, 0), // ""
+QT_MOC_LITERAL(3, 18, 10), // "GetRunning"
+QT_MOC_LITERAL(4, 29, 9), // "GetHealth"
+QT_MOC_LITERAL(5, 39, 9), // "SetHealth"
 QT_MOC_LITERAL(6, 49, 6), // "health"
 QT_MOC_LITERAL(7, 56, 8), // "SetSpeed"
 QT_MOC_LITERAL(8, 65, 5), // "speed"
@@ -42,8 +42,8 @@ QT_MOC_LITERAL(9, 71, 10), // "SetRunning"
 QT_MOC_LITERAL(10, 82, 7) // "running"
 
     },
-    "Enemies\0getHealth\0\0GetSpeed\0GetRunning\0"
-    "setHealth\0health\0SetSpeed\0speed\0"
+    "Enemies\0GetSpeed\0\0GetRunning\0GetHealth\0"
+    "SetHealth\0health\0SetSpeed\0speed\0"
     "SetRunning\0running"
 };
 #undef QT_MOC_LITERAL
@@ -71,8 +71,8 @@ static const uint qt_meta_data_Enemies[] = {
 
  // slots: parameters
     QMetaType::Int,
-    QMetaType::Int,
     QMetaType::Bool,
+    QMetaType::Int,
     QMetaType::Void, QMetaType::Int,    6,
     QMetaType::Void, QMetaType::Int,    8,
     QMetaType::Void, QMetaType::Bool,   10,
@@ -86,13 +86,13 @@ void Enemies::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         Enemies *_t = static_cast<Enemies *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: { int _r = _t->getHealth();
+        case 0: { int _r = _t->GetSpeed();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 1: { int _r = _t->GetSpeed();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 2: { bool _r = _t->GetRunning();
+        case 1: { bool _r = _t->GetRunning();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 3: _t->setHealth((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: { int _r = _t->GetHealth();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 3: _t->SetHealth((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 4: _t->SetSpeed((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->SetRunning((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;

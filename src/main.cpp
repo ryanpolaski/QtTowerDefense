@@ -25,6 +25,8 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("Main_Enemy", &enemies);
 
 
+    //engine.rootContext()->setContextProperty("Main_Tower", &tower);
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();
