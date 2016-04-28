@@ -118,7 +118,8 @@ Window
 
     }
 
-    Text {
+    Text
+    {
         id: name
         x: 450
         y:400
@@ -141,6 +142,7 @@ Window
             property alias bulletPath: path2
             property alias beginX: path2.startX
             property alias beginY: path2.startY
+            property alias anchorP: path.anchorPoint
 
             Bullet
             {
@@ -151,6 +153,7 @@ Window
                     id:path
                     property alias pathAnimation: path
                     target: bullet
+                    anchorPoint: Qt.point(repeater.itemAt(index).x, repeater.itemAt(index).y)
                     loops: 10000
                     running: true
                     //paused: true
@@ -159,8 +162,8 @@ Window
                     path: Path
                     {
                         id: path2
-                        startX: repeater.itemAt(0).x
-                        startY: repeater.itemAt(0).y
+                        startX: repeater.itemAt(index).x
+                        startY: repeater.itemAt(index).y
                         PathLine{x: (enemy.x); y: (enemy.y)}
                     }
                 }
@@ -170,9 +173,8 @@ Window
             {
                 repeater.itemAt(index).beginX = repeater.itemAt(index).x
                 repeater.itemAt(index).beginY = repeater.itemAt(index).y
+                repeater.itemAt(index).anchorP = Qt.point(repeater.itemAt(index).x, repeater.itemAt(index).y)
             }
         }
    }
-
-
 }
