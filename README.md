@@ -1,4 +1,4 @@
-![Alt text](src/Images/TDlogo.jpg)
+![Alt text](Images/TDlogo.png)
 
 <b>Description:<b>
 Cross platform application that lets users play a tower defense style game. 
