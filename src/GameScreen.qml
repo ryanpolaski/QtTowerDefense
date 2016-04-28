@@ -18,7 +18,8 @@ Window
         source: ":/../Images/map1.jpg"
     }
 
-    MyButton{
+    MyButton
+    {
         anchors.right : parent.right
         anchors.top: parent.top
         id: startButton
@@ -27,23 +28,23 @@ Window
         border.color: "black"
         border.width: 2
 
-        Text{
+        Text
+        {
             id: startText
             anchors.centerIn: parent
             text: "START WAVE"
             font.family: "Times"
         }
 
-//        mouseArea.onClicked:{
-//            enemy1.pathAnimation.running = true
-//            enemy1.properties.visible = true
-//        }
+        mouseArea.onClicked:
+        {
+            enemy.visible = true
+            pathEnemy.running = true
+        }
     }
 
-
-
-
-    MyButton{
+    MyButton
+    {
         anchors.left : parent.left
         anchors.top: parent.top
         id: homeButton
@@ -52,26 +53,66 @@ Window
         border.color: "black"
         border.width: 2
 
-        Text{
+        Text
+        {
             id: label
             anchors.centerIn: parent
             text: "RETURN HOME"
             font.family: "Times"
         }
 
-        mouseArea.onClicked:{
+        mouseArea.onClicked:
+        {
             splashScreen.visible = true
-            gameScreen.visible = fasle
+            gameScreen.visible = false
             gameWindow.visible = false
         }
     }
 
-    Enemy{
-        id:enemy1
 
+    Enemy
+    {
+        id:enemy
+        visible: false
+
+        PathAnimation
+        {
+            id:pathEnemy
+            //property alias pathAnimation: path
+            target: enemy
+            running: false
+            duration: 28000
+            path: Path
+            {
+                startX: 0
+                startY: 250
+                PathLine{x: 620; y: 250}
+            }
+        }
+
+        onXChanged:
+        {
+              if(Main_Tower.getState() === 1)
+              {
+
+              }
+
+//            if(Main_Enemy.getHealth() > 0)
+//            {
+//                if(enemy.x === bullet.x && enemy.y === bullet.y)
+//                {
+//                    Main_Enemy.setHealth(5);
+//                }
+//            }
+//            else if(Main_Enemy.getHealth() === 0)
+//            {
+//                enemy.visible = false
+//            }
+        }
     }
 
-    Text {
+    Text
+    {
         id: name
         x: 450
         y:400
@@ -80,41 +121,50 @@ Window
         font.underline: true
     }
 
-    Bullet{
-        id: bullet
-
-        PathAnimation
+    Repeater
+    {
+        id:repeater
+        property alias test:repeater
+        model: 5
+        Tower
         {
-            id:path
-            property alias pathAnimation: path
-            target: bullet
-            loops: 10000
-            running: true
-            paused: true
-            duration: 300
-
-            path: Path{
-                id: path2
-                startX: tower.x + 5
-                startY: tower.y + 5
-                PathLine{x: (enemy1.x + 5); y: (enemy1.y + 5)}
-            }
-        }
-        // changed some stuff
-
-        MouseArea{
-            onClicked: path.paused = false
-        }
-    }
-
-//    Repeater{
-//        id:repeater
-//        model: 500
-        Tower{
             id: tower
-
             x: 460
             y: 430
+            property alias bulletVisible: bullet.visible
+            property alias bulletPath: path2
+            property alias beginX: path2.startX
+            property alias beginY: path2.startY
+
+            Bullet
+            {
+                id: bullet
+                visible: true
+                PathAnimation
+                {
+                    id:path
+                    property alias pathAnimation: path
+                    target: bullet
+                    loops: 10000
+                    running: true
+                    //paused: true
+                    duration: 500
+
+                    path: Path
+                    {
+                        id: path2
+                        startX: repeater.itemAt(0).x
+                        startY: repeater.itemAt(0).y
+                        PathLine{x: (enemy.x); y: (enemy.y)}
+                    }
+                }
+            }
+
+            onXChanged:
+            {
+                repeater.itemAt(index).beginX = repeater.itemAt(index).x
+                repeater.itemAt(index).beginY = repeater.itemAt(index).y
+            }
         }
-    //}
+   }
 }

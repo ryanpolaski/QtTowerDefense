@@ -2,25 +2,27 @@
 #ifndef ENEMIES_H
 #define ENEMIES_H
 
-#include "QObject"
+#include <QObject>
 
-class Enemies
+class Enemies : public QObject
 {
+    Q_OBJECT
+
 public:
     Enemies();
     ~Enemies();
 
 public slots:
-    int GetHealth();
+    int getHealth();
     int GetSpeed();
     bool GetRunning();
-    void SetHealth(int health);
+    void setHealth(int health);
     void SetSpeed(int speed);
     void SetRunning(bool running);
 
 private:
-    int m_health;
-    int m_speed = .5;
+    int m_health = 20;
+    double m_speed = .5;
     bool m_running;
 
 };

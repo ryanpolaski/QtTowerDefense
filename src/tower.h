@@ -21,11 +21,11 @@ public:
 public slots:
     bool getDraggable();
     void setDraggable(bool is_draggable);
-    State getState();
-    void setState(State state);
+    int getState();
+    void setState(int state);
 
 private:
-    State m_state;
+    int m_state;
     bool m_dragable;
 };
 

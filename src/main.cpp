@@ -13,8 +13,17 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     Tower tower;
+    Enemies enemies;
+
+//    player = new QMediaPlayer;
+//    // ...
+//    player->setMedia(QUrl::fromLocalFile("/Users/me/Music/coolsong.mp3"));
+//    player->setVolume(50);
+//    player->play();
 
     engine.rootContext()->setContextProperty("Main_Tower", &tower);
+    engine.rootContext()->setContextProperty("Main_Enemy", &enemies);
+
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 

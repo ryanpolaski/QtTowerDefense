@@ -3,6 +3,7 @@
 
 import QtQuick 2.6
 import Qt.labs.controls 1.0
+import QtMultimedia 5.6
 
 Rectangle {
     id: myButton
@@ -10,6 +11,12 @@ Rectangle {
     property alias mouseArea: mouseArea
     property bool changeColor: false
     signal clicked
+
+    Audio
+    {
+        id: clickSound
+        source: "../Images/mouse_click.mp3"
+    }
 
     NumberAnimation {
         id: opactiyAnimation
@@ -44,31 +51,14 @@ Rectangle {
         }
     ]
 
-    transitions: Transition {
-        PropertyAnimation {
-            target: img
-            property: "opacity"
-            easing.type: Easing.InCirc
-            duration: 200
-        }
-    }
-
     MouseArea{
         id: mouseArea
         anchors.fill: parent
         hoverEnabled: true
 
-//        onHoveredChanged: {
-//            if(changeColor === false)
-//                color = "gold"
-//            else
-//                color = "lightsteelblue"
-//            changeColor = !changeColor
-//        }
-
         onEntered: myButton.state = "mouseIn"
         onExited: myButton.state = "mouseOut"
 
-        onClicked:{ scaleAnimation.start(); opactiyAnimation.start()}
+        onClicked:{ clickSound.play(); scaleAnimation.start(); opactiyAnimation.start();}
     }
 }

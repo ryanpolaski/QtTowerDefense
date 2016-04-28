@@ -13,5 +13,8 @@
         <file>../Images/map1.jpg</file>
         <file>Enemy.qml</file>
         <file>Bullet.qml</file>
+        <file>OptionsScreen.qml</file>
+        <file>../Images/mouse_click.mp3</file>
+        <file>../Images/Incidental-music.mp3</file>
     </qresource>
 </RCC>

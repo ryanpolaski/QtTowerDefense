@@ -27,6 +27,30 @@ Rectangle
         radius: width * .5
     }
 
+    Rectangle
+    {
+        id: smallCircle
+        height: 20
+        width: 20
+        radius: width * .5
+        color: "grey"
+        border.color: "blue"
+        border.width: 1
+        anchors.centerIn: parent
+    }
+
+    Rectangle
+    {
+        id: smallCircle2
+        height: 8
+        width: 8
+        radius: width * .5
+        color: "blue"
+        border.color: "blue"
+        border.width: 1
+        anchors.centerIn: parent
+    }
+
     opacity: 1
     state: "mouseOut"
     states:
@@ -69,6 +93,7 @@ Rectangle
             {
                 drag.target = null
                 Main_Tower.setDraggable(false);
+                Main_Tower.setState(1);
             }
             tower.border.color = "black"
         }

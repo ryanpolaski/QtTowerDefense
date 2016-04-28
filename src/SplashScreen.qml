@@ -2,6 +2,8 @@ import QtQuick 2.6
 import QtQuick.Window 2.2
 import Qt.labs.controls 1.0
 
+
+
 Window
 {
     id:topWindow
@@ -40,13 +42,28 @@ Window
         scale: .5
     }
 
-    Timer{
+    Timer
+    {
         id: startTimer
         interval: 800
         running: false
         repeat: false
-        onTriggered:{
+        onTriggered:
+        {
             gameScreen.visible = true
+            topWindow.visible = false
+        }
+    }
+
+    Timer
+    {
+        id: optionsTimer
+        interval: 800
+        running: false
+        repeat: false
+        onTriggered:
+        {
+            optionsScreen.visible = true
             topWindow.visible = false
         }
     }
@@ -54,7 +71,8 @@ Window
     MyButton
     {
         id: startButton
-        height: 50; width: 200
+        height: 50;
+        width: 200
         color: "burlywood"
         border.color: "black"
         border.width: 2
@@ -63,15 +81,16 @@ Window
         anchors.bottom : exitButton.top
         anchors.bottomMargin: 100
 
-        Text{
+        Text
+        {
             id: label
             anchors.centerIn: parent
             text: "START"
             font.family: "Times"
         }
-        mouseArea.onClicked:{
+        mouseArea.onClicked:
+        {
             startTimer.start()
-
         }
     }
 
@@ -87,13 +106,17 @@ Window
         anchors.bottom : exitButton.top
         anchors.bottomMargin: 25
 
-        Text{
+        Text
+        {
             id: options
             anchors.centerIn: parent
             text: "OPTIONS"
             font.family: "Times"
         }
-        //mouseArea.onClicked: loader.source = "GameScreen.qml"
+        mouseArea.onClicked:
+        {
+            optionsTimer.start()
+        }
     }
 
     MyButton

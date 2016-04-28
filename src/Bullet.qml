@@ -1,14 +1,12 @@
 // Lab 3
 import QtQuick 2.0
 
-Rectangle {
+Rectangle
+{
     id: bullet
     height: 12
     width:12
-    visible: true
-    radius: width * .5
+    radius: width * 2
     color: "black"
-
-
 
 }
