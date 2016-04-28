@@ -8,7 +8,9 @@ C++, Qt, QML, Javascript<br />
 
 <b>Screenshots:</b><br />
 
-![Alt text](src/Images/TDscreenshot1.jpg)
+![Alt text](Images/Screenshot2.png)
+
+![Alt text](Images/Screenshot1.png)
 
 <b>Installation:</b><br />
 1. Install Qt Creator 5.6 <br />
