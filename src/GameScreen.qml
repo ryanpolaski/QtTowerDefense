@@ -66,7 +66,7 @@ Window
         mouseArea.onClicked:
         {
             splashScreen.visible = true
-            gameScreen.visible = fasle
+            gameScreen.visible = false
             gameWindow.visible = false
         }
     }
