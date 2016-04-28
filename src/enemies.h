@@ -15,13 +15,13 @@ public:
 public slots:
     int GetSpeed();
     bool GetRunning();
-    int GetHealth();
-    void SetHealth(int health);
+    int getHealth();
+    void setHealth(int health);
     void SetSpeed(int speed);
     void SetRunning(bool running);
 
 private:
-    int m_health = 20;
+    int m_health;
     double m_speed = .5;
     bool m_running;
 

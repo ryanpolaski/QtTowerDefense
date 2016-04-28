@@ -85,7 +85,7 @@ Window
             duration: 28000
             path: Path
             {
-                startX: 0
+                startX: -20
                 startY: 250
                 PathLine{x: 620; y: 250}
             }
@@ -93,30 +93,27 @@ Window
 
         onXChanged:
         {
-              if(Main_Tower.getState() === 1)
-              {
+            if(Main_Tower.getState() === 1)
+            {
+                //bullet1.visible = true
+                //path1.running = true
+            }
 
-              }
-
-//            if(Main_Enemy.getHealth() > 0)
-//            {
-//                if(enemy.x === bullet.x && enemy.y === bullet.y)
-//                {
-//                    Main_Enemy.setHealth(5);
-//                }
-//            }
-//            else if(Main_Enemy.getHealth() === 0)
-//            {
-//                enemy.visible = false
-//            }
+            //            if(Main_Enemy.getHealth() > 0)
+            //            {
+            //                if(enemy.x === bullet.x && enemy.y === bullet.y)
+            //                {
+            //                    Main_Enemy.setHealth(5);
+            //                }
+            //            }
+            //            else if(Main_Enemy.getHealth() === 0)
+            //            {
+            //                enemy.visible = false
+            //            }
         }
     }
 
 
-    Enemy{
-        id:enemy1
-
-    }
 
     Text
     {
@@ -138,43 +135,50 @@ Window
             id: tower
             x: 460
             y: 430
-            property alias bulletVisible: bullet.visible
-            property alias bulletPath: path2
-            property alias beginX: path2.startX
-            property alias beginY: path2.startY
-            property alias anchorP: path.anchorPoint
+        }
+    }
 
-            Bullet
+    Repeater
+    {
+        model: 5
+
+        Bullet
+        {
+            id: bullet
+            property alias bullet1: bullet
+            visible: true
+            PathAnimation
             {
-                id: bullet
-                visible: true
-                PathAnimation
+                id: path
+                property alias path1: path
+                target: bullet
+                anchorPoint: Qt.point(repeater.itemAt(index).x, repeater.itemAt(index).y)
+                loops: Animation.Infinite
+                running: true
+                duration: 500
+
+                path: Path
                 {
-                    id:path
-                    property alias pathAnimation: path
-                    target: bullet
-                    anchorPoint: Qt.point(repeater.itemAt(index).x, repeater.itemAt(index).y)
-                    loops: 10000
-                    running: true
-                    //paused: true
-                    duration: 500
-
-                    path: Path
+                    startX: -20//repeater.itemAt(index).x
+                    startY: -20//repeater.itemAt(index).y
+                    PathLine
                     {
-                        id: path2
-                        startX: repeater.itemAt(index).x
-                        startY: repeater.itemAt(index).y
-                        PathLine{x: (enemy.x); y: (enemy.y)}
+                        id: pathLine
+                        x: (enemy.x); y: (enemy.y)
                     }
-                }
-            }
 
-            onXChanged:
-            {
-                repeater.itemAt(index).beginX = repeater.itemAt(index).x
-                repeater.itemAt(index).beginY = repeater.itemAt(index).y
-                repeater.itemAt(index).anchorP = Qt.point(repeater.itemAt(index).x, repeater.itemAt(index).y)
+                    onChanged:
+                    {
+                        startX = repeater.itemAt(index).x + 20
+                        startY = repeater.itemAt(index).y + 20
+                        //console.log("Enemy x: " + enemy.x)
+                        //console.log("Enemy y: " + enemy.y)
+                    }
+
+                }
+
+
             }
         }
-   }
+    }
 }

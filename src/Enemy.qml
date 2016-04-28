@@ -10,6 +10,7 @@ Rectangle {
     height: 25
     radius: width * .5
     color: "red"
+    x: -20
     y: 250
 
 
