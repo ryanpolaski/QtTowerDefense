@@ -45,7 +45,8 @@ Window
     }
 
 
-    MyButton{
+    MyButton
+    {
         anchors.left : parent.left
         anchors.top: parent.top
         id: homeButton
@@ -70,6 +71,8 @@ Window
             gameWindow.visible = false
         }
     }
+
+
 
     Enemy
     {
@@ -135,11 +138,17 @@ Window
             id: tower
             x: 460
             y: 430
+
+            onYChanged:
+            {
+
+            }
         }
     }
 
     Repeater
     {
+        id: bulletRepeater
         model: 5
 
         Bullet
@@ -155,7 +164,20 @@ Window
                 anchorPoint: Qt.point(repeater.itemAt(index).x, repeater.itemAt(index).y)
                 loops: Animation.Infinite
                 running: true
-                duration: 500
+
+                duration: 1000
+
+                function path()
+                {
+                    console.log("1")
+                    if(Main_Tower.getState() === 1)
+                    {
+                        console.log("2")
+                        path.running = true
+                    }
+                }
+
+
 
                 path: Path
                 {
@@ -171,13 +193,12 @@ Window
                     {
                         startX = repeater.itemAt(index).x + 20
                         startY = repeater.itemAt(index).y + 20
+                        if(Main_Tower.getState() === 1)
+                            bullet.visible = true
                         //console.log("Enemy x: " + enemy.x)
                         //console.log("Enemy y: " + enemy.y)
                     }
-
                 }
-
-
             }
         }
     }

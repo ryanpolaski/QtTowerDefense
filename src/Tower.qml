@@ -27,6 +27,10 @@ Rectangle
         color: "green"
         opacity: .3
         radius: width * .5
+
+
+
+
     }
 
     Rectangle
@@ -100,7 +104,7 @@ Rectangle
             {
                 drag.target = null
                 Main_Tower.setDraggable(false);
-                Main_Tower.setState(1);
+                //Main_Tower.setState(1);
             }
             tower.border.color = "black"
         }

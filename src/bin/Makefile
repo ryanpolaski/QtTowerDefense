@@ -592,9 +592,14 @@ qrc_qml.cpp: ../qml.qrc \
 		../Bullet.qml \
 		../main.qml \
 		../OptionsScreen.qml \
+		../../Images/startScreenBackground.jpg \
 		../../Images/mouse_click.mp3 \
+		../../Images/Tower.png \
+		../../Images/homeScreenBackground.png \
+		../../Images/TDlogo.png \
 		../../Images/map1.jpg \
-		../../Images/Incidental-music.mp3
+		../../Images/Incidental-music.mp3 \
+		../../Images/fireBall.png
 	/Users/Ryan/Qt/5.6/clang_64/bin/rcc -name qml ../qml.qrc -o qrc_qml.cpp
 
 compiler_moc_header_make_all: moc_tower.cpp moc_enemies.cpp

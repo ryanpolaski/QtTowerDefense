@@ -16,5 +16,7 @@
         <file>OptionsScreen.qml</file>
         <file>../Images/mouse_click.mp3</file>
         <file>../Images/Incidental-music.mp3</file>
+        <file>../Images/fireBall.png</file>
+        <file>../Images/Tower.png</file>
     </qresource>
 </RCC>

@@ -12,6 +12,7 @@ SplashScreen
 
     GameScreen
     {
+        // add second screen
         id: gameScreen
     }
 
