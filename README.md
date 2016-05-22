@@ -27,7 +27,9 @@ https://github.com/ryanpolaski<br />
 <b>Bugs and TODO List:</b><br />
 TODO:
 - Create more waves of enemies.
+-   3 waves of enemies have been created. They are all bosses with differant health's and speeds
 - Implement a life system so when enemies rreach the end the player loses lives
+-   Completed this. The player now has 10 lives and loses one every time an enemy reaches the end
 - Implement a money system. So when the bullet hits an enemy the player recieves coins
 - Possibly design some differant towers/ enemies
 
