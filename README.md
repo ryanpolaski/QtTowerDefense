@@ -25,9 +25,13 @@ a pull request.
 https://github.com/ryanpolaski<br />
 
 <b>Bugs and TODO List:</b><br />
-The splash screen is finished. The initial game layout and design is completed (with basic graphics for objects). 
-The towers currently never stop shooting which is something i need to fix. The next step is to detect when an enemy
-is in range of a tower.
+TODO:
+- Create more waves of enemies.
+-   3 waves of enemies have been created. They are all bosses with differant health's and speeds
+- Implement a life system so when enemies rreach the end the player loses lives
+-   Completed this. The player now has 10 lives and loses one every time an enemy reaches the end
+- Implement a money system. So when the bullet hits an enemy the player recieves coins
+- Possibly design some differant towers/ enemies
 
 <b>Inspiration:</b><br />
 Create a fun application (based on a game I played as a kid), for people of all ages to play.
