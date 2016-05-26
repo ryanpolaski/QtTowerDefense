@@ -19,12 +19,12 @@ public slots:
     void setHealth(int health);
     void SetSpeed(int speed);
     void SetRunning(bool running);
+    void resetHealth(int health);
 
 private:
     int m_health;
     double m_speed = .5;
     bool m_running;
-
 };
 
 #endif // ENEMIES_H

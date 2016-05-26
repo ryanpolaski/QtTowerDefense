@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Tower_t {
-    QByteArrayData data[8];
-    char stringdata0[70];
+    QByteArrayData data[16];
+    char stringdata0[118];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,11 +36,21 @@ QT_MOC_LITERAL(3, 20, 12), // "setDraggable"
 QT_MOC_LITERAL(4, 33, 12), // "is_draggable"
 QT_MOC_LITERAL(5, 46, 8), // "getState"
 QT_MOC_LITERAL(6, 55, 8), // "setState"
-QT_MOC_LITERAL(7, 64, 5) // "state"
+QT_MOC_LITERAL(7, 64, 5), // "state"
+QT_MOC_LITERAL(8, 70, 4), // "setX"
+QT_MOC_LITERAL(9, 75, 1), // "x"
+QT_MOC_LITERAL(10, 77, 4), // "setY"
+QT_MOC_LITERAL(11, 82, 1), // "y"
+QT_MOC_LITERAL(12, 84, 4), // "getX"
+QT_MOC_LITERAL(13, 89, 4), // "getY"
+QT_MOC_LITERAL(14, 94, 14), // "incrementTotal"
+QT_MOC_LITERAL(15, 109, 8) // "getTotal"
 
     },
     "Tower\0getDraggable\0\0setDraggable\0"
-    "is_draggable\0getState\0setState\0state"
+    "is_draggable\0getState\0setState\0state\0"
+    "setX\0x\0setY\0y\0getX\0getY\0incrementTotal\0"
+    "getTotal"
 };
 #undef QT_MOC_LITERAL
 
@@ -50,7 +60,7 @@ static const uint qt_meta_data_Tower[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -58,16 +68,28 @@ static const uint qt_meta_data_Tower[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x0a /* Public */,
-       3,    1,   35,    2, 0x0a /* Public */,
-       5,    0,   38,    2, 0x0a /* Public */,
-       6,    1,   39,    2, 0x0a /* Public */,
+       1,    0,   64,    2, 0x0a /* Public */,
+       3,    1,   65,    2, 0x0a /* Public */,
+       5,    0,   68,    2, 0x0a /* Public */,
+       6,    1,   69,    2, 0x0a /* Public */,
+       8,    1,   72,    2, 0x0a /* Public */,
+      10,    1,   75,    2, 0x0a /* Public */,
+      12,    0,   78,    2, 0x0a /* Public */,
+      13,    0,   79,    2, 0x0a /* Public */,
+      14,    0,   80,    2, 0x0a /* Public */,
+      15,    0,   81,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Bool,
     QMetaType::Void, QMetaType::Bool,    4,
     QMetaType::Int,
     QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Int,
+    QMetaType::Int,
+    QMetaType::Void,
+    QMetaType::Int,
 
        0        // eod
 };
@@ -84,6 +106,15 @@ void Tower::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 2: { int _r = _t->getState();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
         case 3: _t->setState((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->setX((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: _t->setY((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: { int _r = _t->getX();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 7: { int _r = _t->getY();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 8: _t->incrementTotal(); break;
+        case 9: { int _r = _t->getTotal();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
         default: ;
         }
     }
@@ -114,13 +145,13 @@ int Tower::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 10)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 10;
     }
     return _id;
 }

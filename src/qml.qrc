@@ -18,5 +18,8 @@
         <file>../Images/Incidental-music.mp3</file>
         <file>../Images/fireBall.png</file>
         <file>../Images/Tower.png</file>
+        <file>../Images/heart.resized.png</file>
+        <file>../Images/dollarSign.jpg</file>
+        <file>../Images/dollar.png</file>
     </qresource>
 </RCC>

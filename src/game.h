@@ -2,18 +2,28 @@
 #ifndef GAME_H
 #define GAME_H
 
-class Game{
+#include <QObject>
+
+class Game: public QObject
+{
+    Q_OBJECT
+
 public:
     Game();
-    ~Game();
+    //~Game();
 
 public slots:
-    int GetWave();
-    void SetWave();
+    int getWave();
+    void setWave(int wave);
+    int getLives();
+    void setLives(int lives);
+    int getScore();
+    void setScore(int score);
 
 private:
-    int m_wave = 1;
-
+    int m_wave;
+    int m_lives;
+    int m_score;
 };
 
 #endif // GAME_H

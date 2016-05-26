@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Enemies_t {
-    QByteArrayData data[11];
-    char stringdata0[90];
+    QByteArrayData data[12];
+    char stringdata0[102];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,12 +39,13 @@ QT_MOC_LITERAL(6, 49, 6), // "health"
 QT_MOC_LITERAL(7, 56, 8), // "SetSpeed"
 QT_MOC_LITERAL(8, 65, 5), // "speed"
 QT_MOC_LITERAL(9, 71, 10), // "SetRunning"
-QT_MOC_LITERAL(10, 82, 7) // "running"
+QT_MOC_LITERAL(10, 82, 7), // "running"
+QT_MOC_LITERAL(11, 90, 11) // "resetHealth"
 
     },
     "Enemies\0GetSpeed\0\0GetRunning\0getHealth\0"
     "setHealth\0health\0SetSpeed\0speed\0"
-    "SetRunning\0running"
+    "SetRunning\0running\0resetHealth"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,7 +55,7 @@ static const uint qt_meta_data_Enemies[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -62,12 +63,13 @@ static const uint qt_meta_data_Enemies[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   44,    2, 0x0a /* Public */,
-       3,    0,   45,    2, 0x0a /* Public */,
-       4,    0,   46,    2, 0x0a /* Public */,
-       5,    1,   47,    2, 0x0a /* Public */,
-       7,    1,   50,    2, 0x0a /* Public */,
-       9,    1,   53,    2, 0x0a /* Public */,
+       1,    0,   49,    2, 0x0a /* Public */,
+       3,    0,   50,    2, 0x0a /* Public */,
+       4,    0,   51,    2, 0x0a /* Public */,
+       5,    1,   52,    2, 0x0a /* Public */,
+       7,    1,   55,    2, 0x0a /* Public */,
+       9,    1,   58,    2, 0x0a /* Public */,
+      11,    1,   61,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Int,
@@ -76,6 +78,7 @@ static const uint qt_meta_data_Enemies[] = {
     QMetaType::Void, QMetaType::Int,    6,
     QMetaType::Void, QMetaType::Int,    8,
     QMetaType::Void, QMetaType::Bool,   10,
+    QMetaType::Void, QMetaType::Int,    6,
 
        0        // eod
 };
@@ -95,6 +98,7 @@ void Enemies::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 3: _t->setHealth((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 4: _t->SetSpeed((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->SetRunning((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: _t->resetHealth((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -125,13 +129,13 @@ int Enemies::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

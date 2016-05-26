@@ -5,7 +5,8 @@ CONFIG += c++11
 
 SOURCES += main.cpp \
     tower.cpp \
-    enemies.cpp
+    enemies.cpp \
+    game.cpp
 
 RESOURCES += \
     qml.qrc

@@ -50,14 +50,18 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../main.cpp \
 		../tower.cpp \
-		../enemies.cpp qrc_qml.cpp \
+		../enemies.cpp \
+		../game.cpp qrc_qml.cpp \
 		moc_tower.cpp \
+		moc_game.cpp \
 		moc_enemies.cpp
 OBJECTS       = main.o \
 		tower.o \
 		enemies.o \
+		game.o \
 		qrc_qml.o \
 		moc_tower.o \
+		moc_game.o \
 		moc_enemies.o
 DIST          = ../Bullet.qml \
 		../Enemy.qml \
@@ -215,7 +219,8 @@ DIST          = ../Bullet.qml \
 		../game.h \
 		../enemies.h ../main.cpp \
 		../tower.cpp \
-		../enemies.cpp
+		../enemies.cpp \
+		../game.cpp
 QMAKE_TARGET  = TowerDefense
 DESTDIR       = 
 TARGET        = TowerDefense.app/Contents/MacOS/TowerDefense
@@ -556,7 +561,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../qml.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../tower.h ../game.h ../enemies.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../main.cpp ../tower.cpp ../enemies.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../main.cpp ../tower.cpp ../enemies.cpp ../game.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -597,18 +602,26 @@ qrc_qml.cpp: ../qml.qrc \
 		../../Images/Tower.png \
 		../../Images/homeScreenBackground.png \
 		../../Images/TDlogo.png \
+		../../Images/dollarSign.jpg \
+		../../Images/heart.resized.png \
 		../../Images/map1.jpg \
 		../../Images/Incidental-music.mp3 \
-		../../Images/fireBall.png
+		../../Images/fireBall.png \
+		../../Images/dollar.png
 	/Users/Ryan/Qt/5.6/clang_64/bin/rcc -name qml ../qml.qrc -o qrc_qml.cpp
 
-compiler_moc_header_make_all: moc_tower.cpp moc_enemies.cpp
+compiler_moc_header_make_all: moc_tower.cpp moc_game.cpp moc_enemies.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_tower.cpp moc_enemies.cpp
+	-$(DEL_FILE) moc_tower.cpp moc_game.cpp moc_enemies.cpp
 moc_tower.cpp: ../../../../Qt/5.6/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.6/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		../tower.h
 	/Users/Ryan/Qt/5.6/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/Ryan/Qt/5.6/clang_64/mkspecs/macx-clang -I/Users/Ryan/CST238/QtTowerDefense/src -I/Users/Ryan/Qt/5.6/clang_64/lib/QtQuick.framework/Headers -I/Users/Ryan/Qt/5.6/clang_64/lib/QtGui.framework/Headers -I/Users/Ryan/Qt/5.6/clang_64/lib/QtQml.framework/Headers -I/Users/Ryan/Qt/5.6/clang_64/lib/QtNetwork.framework/Headers -I/Users/Ryan/Qt/5.6/clang_64/lib/QtCore.framework/Headers -I. -F/Users/Ryan/Qt/5.6/clang_64/lib ../tower.h -o moc_tower.cpp
+
+moc_game.cpp: ../../../../Qt/5.6/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt/5.6/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../game.h
+	/Users/Ryan/Qt/5.6/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/Ryan/Qt/5.6/clang_64/mkspecs/macx-clang -I/Users/Ryan/CST238/QtTowerDefense/src -I/Users/Ryan/Qt/5.6/clang_64/lib/QtQuick.framework/Headers -I/Users/Ryan/Qt/5.6/clang_64/lib/QtGui.framework/Headers -I/Users/Ryan/Qt/5.6/clang_64/lib/QtQml.framework/Headers -I/Users/Ryan/Qt/5.6/clang_64/lib/QtNetwork.framework/Headers -I/Users/Ryan/Qt/5.6/clang_64/lib/QtCore.framework/Headers -I. -F/Users/Ryan/Qt/5.6/clang_64/lib ../game.h -o moc_game.cpp
 
 moc_enemies.cpp: ../../../../Qt/5.6/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.6/clang_64/lib/QtCore.framework/Headers/qobject.h \
@@ -652,11 +665,19 @@ enemies.o: ../enemies.cpp ../enemies.h \
 		../../../../Qt/5.6/clang_64/lib/QtCore.framework/Headers/qobject.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o enemies.o ../enemies.cpp
 
+game.o: ../game.cpp ../game.h \
+		../../../../Qt/5.6/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt/5.6/clang_64/lib/QtCore.framework/Headers/qobject.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o game.o ../game.cpp
+
 qrc_qml.o: qrc_qml.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_qml.o qrc_qml.cpp
 
 moc_tower.o: moc_tower.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_tower.o moc_tower.cpp
+
+moc_game.o: moc_game.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_game.o moc_game.cpp
 
 moc_enemies.o: moc_enemies.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_enemies.o moc_enemies.cpp

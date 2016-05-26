@@ -22,8 +22,8 @@ Rectangle
         id: myArea
         visible: false
         anchors.centerIn: tower
-        height: 200
-        width: 200
+        height: 300
+        width: 300
         color: "green"
         opacity: .3
         radius: width * .5
@@ -82,9 +82,11 @@ Rectangle
 
         onPressed:
         {
-            if(tower.x == 460)
+            if(tower.x == 460 && Main_Game.getScore() > 24)
             {
+               Main_Game.setScore(-25)
                Main_Tower.setDraggable(true);
+
             }
             if(Main_Tower.getDraggable())
             {
@@ -92,8 +94,10 @@ Rectangle
                 tower.border.color = "gold"
             }
 
+
             drag.minimumY = 65
             drag.maximumY = 370
+            //drag.maximumY = 200
             drag.minimumX = 120
             drag.maximumX = 520
         }
@@ -102,6 +106,7 @@ Rectangle
         {
             if(Main_Tower.getDraggable())
             {
+                Main_Tower.incrementTotal();
                 drag.target = null
                 Main_Tower.setDraggable(false);
                 //Main_Tower.setState(1);

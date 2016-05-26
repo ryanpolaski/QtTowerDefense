@@ -1,7 +1,7 @@
 // Lab 3
 #include "enemies.h"
 
-Enemies::Enemies() : m_health(200), m_running(false)
+Enemies::Enemies() : m_health(25), m_running(false)
 {}
 
 Enemies::~Enemies()
@@ -36,4 +36,9 @@ int Enemies::getHealth()
 int Enemies::GetSpeed()
 {
     return m_speed;
+}
+
+void Enemies::resetHealth(int health)
+{
+  m_health = health;
 }

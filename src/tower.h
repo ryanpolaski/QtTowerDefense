@@ -23,11 +23,19 @@ public slots:
     void setDraggable(bool is_draggable);
     int getState();
     void setState(int state);
-
+    void setX(int x);
+    void setY(int y);
+    int getX();
+    int getY();
+    void incrementTotal();
+    int getTotal();
 
 private:
     int m_state;
     bool m_dragable;
+    int x_coord;
+    int y_coord;
+    int m_totalOnBoard;
 };
 
 

@@ -1,7 +1,8 @@
 // Lab 3
 import QtQuick 2.0
 
-Rectangle {
+Rectangle
+{
     id: enemy
     property alias properties: enemy
 
@@ -13,6 +14,16 @@ Rectangle {
     x: -20
     y: 250
 
+    Rectangle
+    {
+        id: helathBar
+        visible: true
+        width: 30
+        height: 5
+        color: "green"
+        anchors.bottom: enemy.top
+        anchors.bottomMargin: 5
+    }
 
     PathAnimation
     {
@@ -21,10 +32,13 @@ Rectangle {
         target: enemy
         running: false
         duration: 28000
-        path: Path{
+        path: Path
+        {
             startX: 0
             startY: 250
             PathLine{x: 620; y: 250}
         }
     }
 }
+
+

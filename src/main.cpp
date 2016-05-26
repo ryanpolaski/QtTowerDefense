@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 
     Tower tower;
     Enemies enemies;
+    Game games;
 
 //    player = new QMediaPlayer;
 //    // ...
@@ -23,6 +24,7 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("Main_Tower", &tower);
     engine.rootContext()->setContextProperty("Main_Enemy", &enemies);
+    engine.rootContext()->setContextProperty("Main_Game", &games);
 
 
     //engine.rootContext()->setContextProperty("Main_Tower", &tower);
